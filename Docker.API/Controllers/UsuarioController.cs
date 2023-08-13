@@ -20,6 +20,10 @@ namespace Docker.API.Controllers
             _usuarioRepository.VerificaSeTabelaExiste();
         }
 
+        /// <summary>
+        /// Seleciona todos os Usuários
+        /// </summary>
+        /// <returns>Lista de Usuários</returns>
         [HttpGet("SelecionarUsuarios")]
         public IEnumerable<Usuario> SelecionarUsuarios()
         {
@@ -28,6 +32,11 @@ namespace Docker.API.Controllers
             return usuarios;
         }
 
+        /// <summary>
+        /// Seleciona um usuário pelo seu ID
+        /// </summary>
+        /// <param name="id">ID do Usuário</param>
+        /// <returns>Dados do Usuário com o ID informado</returns>
         [HttpPost("SelecionarUsuarioPorId")]
         public Usuario SelecionarUsuariosPorId(int id)
         {
@@ -36,6 +45,11 @@ namespace Docker.API.Controllers
             return usuario;
         }
 
+        /// <summary>
+        /// Atualiza o Usuário pelo ID com os dados informados
+        /// </summary>
+        /// <param name="usuario">Dados do Usuário a ser atualizado</param>
+        /// <returns>Retorna 1 para sucesso e 0 caso não seja possível atualizar o Usuário</returns>
         [HttpPost("AtualizarUsuario")]
         public bool AtualizarUsuario(Usuario usuario)
         {
@@ -44,6 +58,11 @@ namespace Docker.API.Controllers
             return resultado;
         }
 
+        /// <summary>
+        /// Adiciona um novo Usuário
+        /// </summary>
+        /// <param name="usuario">Dados do Usuário a ser Adicionado</param>
+        /// <returns>Retorna 1 para sucesso e 0 caso não seja possível atualizar o Usuário</returns>
         [HttpPost("AdicionarUsuario")]
         public bool AdicionarUsuario(Usuario usuario)
         {
@@ -52,6 +71,11 @@ namespace Docker.API.Controllers
             return resultado;
         }
 
+        /// <summary>
+        /// Remove um Usuário existente
+        /// </summary>
+        /// <param name="id">ID do Usuário</param>
+        /// <returns>Retorna 1 para sucesso e 0 caso não seja possível atualizar o Usuário</returns>
         [HttpPost("RemoverUsuario")]
         public bool RemoverUsuario(int id)
         {
