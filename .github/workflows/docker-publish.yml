@@ -34,7 +34,7 @@ jobs:
           tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_198c075393ba42149ac9450e11220c95 }}/andrecini/devops_api:${{ github.sha }}
           file: ./Dockerfile
 
-    deploy:
+  deploy:
       runs-on: ubuntu-latest
       needs: build
       environment:
