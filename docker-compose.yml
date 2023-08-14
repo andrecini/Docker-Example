@@ -2,7 +2,7 @@ version: '3.4'
 
 services:  
   docker.api:
-    image: ${DOCKER_REGISTRY-}dockerapi
+    image: andrecini/devops_api:dev
     build:
       context: .
       dockerfile: Docker.API/Dockerfile
@@ -14,9 +14,10 @@ services:
     environment: 
       - DBHOST=database
       - ASPNETCORE_ENVIRONMENT=Development
+
   database:
-    image: mysql:8.0.22
-    container_name: mysqldb
+    image: mysql:5.5
+    container_name: mysql
     ports:
       - "3307:3307"
     expose: 
