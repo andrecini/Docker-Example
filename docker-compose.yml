@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3.8'
 
 services:  
   docker.api:
@@ -14,10 +14,9 @@ services:
     environment: 
       - DBHOST=database
       - ASPNETCORE_ENVIRONMENT=Development
-
   database:
-    image: mysql:5.5
-    container_name: mysql
+    image: mysql:8.0.22
+    container_name: mysqldb
     ports:
       - "3307:3307"
     expose: 

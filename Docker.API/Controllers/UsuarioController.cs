@@ -1,7 +1,6 @@
 using Docker.Core.Entities;
 using Docker.Repository.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace Docker.API.Controllers
 {

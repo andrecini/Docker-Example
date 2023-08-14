@@ -2,13 +2,16 @@ using Docker.Repository.Interfaces;
 using Docker.Repository.Repositories;
 using MySqlConnector;
 using System.Reflection;
-using Swashbuckle.AspNetCore.Swagger;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<GlobalExceptionFilter>(); // Adicionar o filtro personalizado
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opt =>
@@ -17,7 +20,6 @@ builder.Services.AddSwaggerGen(opt =>
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     opt.IncludeXmlComments(xmlPath);
 });
-
 
 // Add Connection
 builder.Services.AddTransient(x =>
