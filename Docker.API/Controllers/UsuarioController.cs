@@ -20,22 +20,22 @@ namespace Docker.API.Controllers
         }
 
         /// <summary>
-        /// Seleciona todos os Usuários
+        /// Seleciona todos os Usuarios
         /// </summary>
-        /// <returns>Lista de Usuários</returns>
+        /// <returns>Lista de Usuarios</returns>
         [HttpGet("SelecionarUsuarios")]
         public IEnumerable<Usuario> SelecionarUsuarios()
         {
             var usuarios = _usuarioRepository.SelecionarUsuarios();
 
-            return usuarios;
+            return usuarios; 
         }
 
         /// <summary>
-        /// Seleciona um usuário pelo seu ID
+        /// Seleciona um usuario pelo seu ID
         /// </summary>
-        /// <param name="id">ID do Usuário</param>
-        /// <returns>Dados do Usuário com o ID informado</returns>
+        /// <param name="id">ID do Usuario</param>
+        /// <returns>Dados do Usuario com o ID informado</returns>
         [HttpPost("SelecionarUsuarioPorId")]
         public Usuario SelecionarUsuariosPorId(int id)
         {
@@ -45,10 +45,10 @@ namespace Docker.API.Controllers
         }
 
         /// <summary>
-        /// Atualiza o Usuário pelo ID com os dados informados
+        /// Atualiza o Usuario pelo ID com os dados informados
         /// </summary>
-        /// <param name="usuario">Dados do Usuário a ser atualizado</param>
-        /// <returns>Retorna 1 para sucesso e 0 caso não seja possível atualizar o Usuário</returns>
+        /// <param name="usuario">Dados do Usuario a ser atualizado</param>
+        /// <returns>Retorna 1 para sucesso e 0 caso nao seja possavel atualizar o Usuário</returns>
         [HttpPost("AtualizarUsuario")]
         public bool AtualizarUsuario(Usuario usuario)
         {
@@ -58,10 +58,10 @@ namespace Docker.API.Controllers
         }
 
         /// <summary>
-        /// Adiciona um novo Usuário
+        /// Adiciona um novo Usuario
         /// </summary>
-        /// <param name="usuario">Dados do Usuário a ser Adicionado</param>
-        /// <returns>Retorna 1 para sucesso e 0 caso não seja possível atualizar o Usuário</returns>
+        /// <param name="usuario">Dados do Usuario a ser Adicionado</param>
+        /// <returns>Retorna 1 para sucesso e 0 caso nao seja possavel atualizar o Usuário</returns>
         [HttpPost("AdicionarUsuario")]
         public bool AdicionarUsuario(Usuario usuario)
         {
@@ -71,10 +71,10 @@ namespace Docker.API.Controllers
         }
 
         /// <summary>
-        /// Remove um Usuário existente
+        /// Remove um Usuario existente
         /// </summary>
-        /// <param name="id">ID do Usuário</param>
-        /// <returns>Retorna 1 para sucesso e 0 caso não seja possível atualizar o Usuário</returns>
+        /// <param name="id">ID do Usuario</param>
+        /// <returns>Retorna 1 para sucesso e 0 caso nao seja possavel atualizar o Usuario</returns>
         [HttpPost("RemoverUsuario")]
         public bool RemoverUsuario(int id)
         {

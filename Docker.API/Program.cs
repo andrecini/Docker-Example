@@ -4,9 +4,10 @@ using MySqlConnector;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 // Add services to the container.
-
 builder.Services.AddControllers(options =>
 {
     options.Filters.Add<GlobalExceptionFilter>(); // Adicionar o filtro personalizado
@@ -32,7 +33,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();    
+    app.UseSwagger();
     app.UseSwaggerUI();
 }
 

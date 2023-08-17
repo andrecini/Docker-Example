@@ -16,7 +16,7 @@ public class GlobalExceptionFilter : ExceptionFilterAttribute
 
         context.Result = new ObjectResult("Ocorreu um erro na API.")
         {
-            Value = new StringContent("An unexpected error occurred."), 
+            Value = new StringContent("An unexpected error occurred."),
             StatusCode = 500
         };
 

@@ -1,13 +1,7 @@
-﻿using Docker.Core.Entities;
+﻿using Dapper;
+using Docker.Core.Entities;
 using Docker.Repository.Interfaces;
 using MySqlConnector;
-using Dapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Common;
 
 namespace Docker.Repository.Repositories
 {
@@ -24,7 +18,7 @@ namespace Docker.Repository.Repositories
         {
             string query = "SELECT 1 FROM information_schema.tables WHERE table_name = @TableName LIMIT 1;";
             int result = _connection.ExecuteScalar<int>(query, new { TableName = "Usuario" });
-            
+
             if (result == 0)
             {
                 return CriarTabela();
