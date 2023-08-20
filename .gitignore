@@ -362,5 +362,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-#  Docker-Compose
+# Docker-Compose
 docker-compose*
+dockerignore*
+launchSettings*
